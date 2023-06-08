@@ -21,7 +21,12 @@ Fig.2: Encoding of an example architecture showing the mapping from a cell to th
 Since each edge can be one of 5 operations, the search space contains $5^6 = 15,625$ unique neural architectures. Each architecture was trained three times using different random seeds on three popular image classification datasets: CIFAR-10, CIFAR- 100, and ImageNet-16-120. The benchmark provides pre-computed train, validation, and test accuracies, loss error and other metrics for each architecture, seed and image dataset.
 
 ## Fitness Landscape Analysis
-A fitness landscape is a triplet $(S, N, f)$ where $S$ is a set of admissible solutions i.e., a search space, $N: S \longrightarrow 2^S$, is a neighbourhood structure, a function that assigns a set of neighbours $N(s)$ to every solution $s \in S$, and $f : S \longrightarrow \mathbb{R}$ is a fitness function that measures the quality of the corresponding solutions.  We define below these three components for our NAS formulation.
+A fitness landscape is a triplet $(S, N, f)$ where
+* $S$ is a set of admissible solutions i.e., a search space 
+* $N: S \longrightarrow 2^S$, is a neighbourhood structure, a function that assigns a set of neighbours $N(s)$ to every solution $s \in S$ 
+* $f : S \longrightarrow \mathbb{R}$ is a fitness function that measures the quality of the corresponding solutions. 
+ 
+We define below these three components for our NAS formulation.
 
 *Search space*. The search space consists of strings of length $n = 6$ (the number of edges in the DAG representing the cell in the alphabet  $\Sigma =\{A, B, C, D, E\}$, where each symbol represents a predefined operation. An example genotype is given in Fig. 2 (b), where the symbol at position $i$ corresponds to the operation associated to edge $i$ in the DAG. The size of the search space is $|Sigma|^n$, that is, $5^6 = 15,625$, as indicated above.
 
