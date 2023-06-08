@@ -28,7 +28,7 @@ A fitness landscape is a triplet $(S, N, f)$ where
  
 We define below these three components for our NAS formulation.
 
-*Search space*. The search space consists of strings of length $n = 6$ (the number of edges in the DAG representing the cell in the alphabet  $\Sigma =\{A, B, C, D, E\}$, where each symbol represents a predefined operation. An example genotype is given in Fig. 2 (b), where the symbol at position $i$ corresponds to the operation associated to edge $i$ in the DAG. The size of the search space is $|Sigma|^n$, that is, $5^6 = 15,625$, as indicated above.
+*Search space*. The search space consists of strings of length $n = 6$ (the number of edges in the DAG representing the cell in the alphabet  $\Sigma = \{A, B, C, D, E \}$, where each symbol represents a predefined operation. An example genotype is given in Fig. 2 (b), where the symbol at position $i$ corresponds to the operation associated to edge $i$ in the DAG. The size of the search space is $|\Sigma|^n$, that is, $5^6 = 15,625$, as indicated above.
 
 *Neighbourhood Structure*. We use the standard Hamming distance 1 neighbourhood (1-change operator). The Hamming distance between two strings is the number of positions in which they differ. Therefore, the neighbourhood $N(s)$ of solution $s$ includes the set of all solutions at a maximum Hamming distance  1 from $s$. The size of the neighbourhood is $n \times (|\Sigma| - 1)$, that is, $6 \times 4 = 24$. 
 
