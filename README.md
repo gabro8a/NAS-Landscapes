@@ -7,7 +7,7 @@ Gabriela Ochoa, Nadarajen Veerapen (2022) [Neural Architecture Search: A Visual 
 
 Where we conduct a fitness landscape analysis and visualisation of the NAS topology search space proposed in this article:
 
-Dong, X., Liu, L., Musial, K., Gabrys, B (2021)[NATS-Bench: benchmarking NAS algorithms for architecture topology and size](https://ieeexplore.ieee.org/abstract/document/9336247). *IEEE Trans. Pattern Anal. Mach. Intell.* 7(2022), 3634–3646 (2021)
+Dong, X., Liu, L., Musial, K., Gabrys, B (2022)[NATS-Bench: benchmarking NAS algorithms for architecture topology and size](https://ieeexplore.ieee.org/abstract/document/9336247). *IEEE Trans. Pattern Anal. Mach. Intell.* 7, 3634–3646
 
 ## The NATS-Bench Topology Search Space
 This search space was inspired by the successful cell-based NAS algorithms, it consists of a predefined macro skeleton (Fig. 1) where modular (searchable) cells are stacked. 
