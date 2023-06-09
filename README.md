@@ -54,7 +54,7 @@ Contains three folders
 * **lon**: has six zip files corresponding to the 3 image datasets and the the 2 fitness functions. Each zip file contains a set of (1,000) run files representing the sampling process to construct local optima networks (LONs). Each run file has four columns which correspond to the solution and fitness value of the start and end local optima in the search trajectory of an iterated local search algorithm.
 
 ### Scripts
-There are 5 R scripts as described below. The plotting scripts save plots as pdf files in a directory named "plots/". You need to create a local folder named "plots/" before running the scripts.
+There are 5 R scripts as described below. The plotting scripts save plots as pdf (or png) files in a directory named "plots/". You need to create a local folder named "plots/" before running the scripts.
 * [dos_plot.R](scripts/dos_plot.R) Reads accuracy data (from the "data/accuracy/" folder) for all datasets and the two fitness functions and produces density of states (dos) plots. 
 * [fdc_plot.R](scripts/fdc_plot.R) Reads accuracy and genotype data (from the "data/accuracy/" folder) for all datasets and the two fitness functions and produces fitness distance correlation (fdc) plots, a regression line and the Spearman's correlation coefficient is added in each plot. 
 * [genotype_plot.R](scripts/genotype_plot.R) Reads accuracy and genotype data (from the "data/genotype/" folder) for all datasets and the best and worst portions of the search space, and produces coloured genotype heat-maps. 
