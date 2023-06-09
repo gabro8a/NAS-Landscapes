@@ -28,7 +28,7 @@ A fitness landscape is a triplet $(S, N, f)$ where
  
 We define below these three components for our NAS formulation.
 
-*Search space*. The search space consists of strings of length $n = 6$ (the number of edges in the DAG representing the cell in the alphabet  $\Sigma = \{A, B, C, D, E \}$, where each symbol represents a predefined operation. An example genotype is given in Fig. 2 (b), where the symbol at position $i$ corresponds to the operation associated to edge $i$ in the DAG. The size of the search space is $|\Sigma|^n$, that is, $5^6 = 15,625$, as indicated above.
+*Search space*. The search space consists of strings of length $n = 6$ (the number of edges in the DAG representing the cell in the alphabet  $\Sigma$ = {A, B, C, D, E}, where each symbol represents a predefined operation. An example genotype is given in Fig. 2 (b), where the symbol at position $i$ corresponds to the operation associated to edge $i$ in the DAG. The size of the search space is $|\Sigma|^n$, that is, $5^6 = 15,625$, as indicated above.
 
 *Neighbourhood Structure*. We use the standard Hamming distance 1 neighbourhood (1-change operator). The Hamming distance between two strings is the number of positions in which they differ. Therefore, the neighbourhood $N(s)$ of solution $s$ includes the set of all solutions at a maximum Hamming distance  1 from $s$. The size of the neighbourhood is $n \times (|\Sigma| - 1)$, that is, $6 \times 4 = 24$. 
 
@@ -50,7 +50,7 @@ There are two folders: **data** and **scripts** as described below.
 ### Data 
 Contains three folders 
 * **accuracy**: has six csv files corresponding to the 3 image datasets and the 2 fitness functions. Each file contains columns for the solution representation (genotype),  the validation accuracy (as well as several other metrics) for each of the 15,625 architectures.
-* **genotype**: has six csv files corresponding to the 3 image datasets and the best and worst $1\%$ architectures as ranked by the $f_{avg}$ fitness values. Each file contains columns for the solution and the two fitness functions.
+* **genotype**: has six csv files corresponding to the 3 image datasets and the best 1% and worst 1% architectures as ranked by the $f_{avg}$ fitness values. Each file contains columns for the solution and the two fitness functions.
 * **lon**: has six zip files corresponding to the 3 image datasets and the the 2 fitness functions. Each zip file contains a set of (1,000) run files representing the sampling process to construct local optima networks (LONs). Each run file has four columns which correspond to the solution and fitness value of the start and end local optima in the search trajectory of an iterated local search algorithm.
 
 ### Scripts
