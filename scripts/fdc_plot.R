@@ -34,7 +34,6 @@ fdc_acc <- function(instance)  {
   bname <- substr(instance,1, nchar(instance)-4)  # Take instance name without extension
   plab <- strsplit(bname,"_")[[1]]
   ylab <- paste0("f_",plab[2])
-  # Add Hamming Distance to global as a column
   
   # Add Hamming Distance to global as a column
   if (length(best_sol) > 1) {
