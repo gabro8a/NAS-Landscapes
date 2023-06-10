@@ -1,5 +1,5 @@
 #########################################################################
-# Local Optima Network Analysis (LONs) for Neural Architecture Sarch (NAS) 
+# Fitness Landscape Analysisfor Neural Architecture Sarch (NAS) 
 # Gabriela Ochoa and Nadarajen Veerapen
 # June 2023 - Search Space Analysis Tutorial
 # Heatmaps showing the solutions (genotypes) as colored vectors
@@ -7,10 +7,18 @@
 # Output: pdf files with plots
 #########################################################################
 
+# Check if required packages are installed or not. Install if required
+
+packages <- c("ggplot2", "ggpubr", "reshape2")
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))  
+}
 
 library(ggplot2)    # grammar of graphic plotting 
 library(reshape2)   # restructure and aggregate data  (melt function)
 library(ggpubr)     # publication ready plots (ggarrange function)
+
+rm(list = ls(all.names = TRUE))  # Remove all objectes from previous work
 
 # Location of input and output  
 infolder ="data/genotype/" 
