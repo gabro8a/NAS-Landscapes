@@ -7,13 +7,17 @@
 # Output: pdf files with plots
 #########################################################################
 
+# Check if required packages are installed or not. Install if required
+packages <- c("ggplot2", "ggpubr", "data.table" )
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))  
+}
+
 library(ggplot2)    # grammar of graphic plotting 
 library(ggpubr)     # publication ready plots (ggarrange function)
 library(data.table) # to facilitate data reading in table format (fread)
 
-
 rm(list = ls(all.names = TRUE))  # Remove all objectes from previous work
-
 
 # Location of input and output  
 infolder ="data/accuracy/" 
