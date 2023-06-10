@@ -8,6 +8,13 @@
 # Output: Save RData file containing LON model
 #########################################################################
 rm(list = ls(all = TRUE))
+
+# Check if required packages are installed or not. Install if required
+packages <- c("igraph", "plyr")
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))  
+}
+
 library(igraph) # Network analysis and visualisation
 library(plyr)   # Splitting, Applying and Combining Data
 
