@@ -1,5 +1,5 @@
 #########################################################################
-# Local Optima Network Analysis (LONs) for Neural Architecture Sarch (NAS) 
+# Fitness landscape analysis for Neural Architecture Sarch (NAS) 
 # Gabriela Ochoa and Nadarajen Veerapen
 # June 2023 - Search Space Analysis Tutorial
 # Fitness distance correlation plots (fdc) solutions and accuracy metrics
@@ -35,7 +35,16 @@ fdc_acc <- function(instance)  {
   plab <- strsplit(bname,"_")[[1]]
   ylab <- paste0("f_",plab[2])
   # Add Hamming Distance to global as a column
-  sp$hd <- stringdist(best_sol, sp$sol, method ="hamming")  # Hamming distance to validation best
+  
+  # Add Hamming Distance to global as a column
+  if (length(best_sol) > 1) {
+    # Since there are several global optima, compute distance to all the optimal solutions and take the min
+    dmat <-  sapply(best_sol,stringdist, b=sp$sol, method = "hamming")
+    sp$hd <- apply(dmat, 1,min) # take the distance to the closest global optimum
+  } else {  # for a single global optimum there is a single distance
+    sp$hd <- stringdist(best_sol, sp$sol, method ="hamming")  # Hamming distance to  best
+  }
+  
   mcol <- ifelse(ylab == "f_avg", "#E81313", "#1071E5")     # Different colors for the two fitness functions 
   a <- ggscatter(sp, x = "hd", y = "valid_accuracy", repel = T,
                  add = "reg.line", conf.int = TRUE, 
