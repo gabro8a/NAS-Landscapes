@@ -34,7 +34,8 @@ if (minimization) {
 
 # Creates LON Object  ----------------------------------------------------
 # LON:    Complete set of Nodes and Edges
-# number of runs to read from the input zip file, we are using all available
+# number of runs to read from the input zip file. The file contains 1,000 runs in total
+# but we can use a subset of the runs for creating the LONs
 runs <- 100
 
 # dara structures to keep raw data
@@ -100,5 +101,5 @@ create_lon <- function(instance)  {
 # ---- read all files in the given input folder ----------------
 dataf <- list.files(infolder)
 
-# Create lons for all data files int eh folder
+# Create lons for all data files int the folder
 lapply(dataf, create_lon)
