@@ -7,6 +7,12 @@
 # Output: pdf files with fdc plots
 #########################################################################
 
+# Check if required packages are installed or not. Install if required
+packages <- c("stringdist", "ggplot2", "ggpubr", "data.table" )
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))  
+}
+
 library(stringdist)  # for string distance calculation (Hamming distance)
 library(ggplot2)     # grammar of graphic plotting 
 library(ggpubr)      # publication ready plots (ggarrange function)
