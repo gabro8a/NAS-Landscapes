@@ -1,5 +1,5 @@
 # NAS-Landscapes
-Data and scripts for fitness landscape analysis of a neural architecture search (NAS) benchmark (NATS-Bench).
+Fitness landscape analysis  and local optima networks for neural architecture search (NAS), benchmark (NATS-Bench).
 
 This repo contains data and R scripts related to the paper:
 
@@ -61,4 +61,14 @@ There are 5 R scripts as described below. The plotting scripts save plots as pdf
 * [lon_create.R](scripts/lon_create.R) Reads run logs (from the "data/lon/" folder) for all datasets and the two fitness functions and constructs local optima networks (LON) graph objects. The LON graphs are saved within .RData files in a directory called "lons/". You need to create a local folder named "lons/" before running this script.
 * [lon_plot.R](scripts/lon_plot.R) Reads LON graph objects (from .RData files in the "lons/" folder) for all datasets and the two fitness functions and produces network plots in 2D and 3D. 
 
-
+## Suggested Exercises
+1. Consider the fully enumerated search spaces provided in the [data/accuracy/](data/accuracy/) folder and run the provided R scripts to produce (remember to create a local folder named 'plots/' to save your plots):
+    1. A density of state (DOS) analysis [dos_plots.R](scripts/dos_plot.R)
+    2. A fitness distance (FDC) analysis [fdc_plots.R](scripts/fdc_plot.R)
+    3. Repeat the analyses above but now use the validation-loss metric (rather than the validation-accuracy metric as the fitness function) 
+2. Consider the pre-processed solution (genotype) data provided in the  [data/genotype/](data/genotype/) folder:
+    1. Run the [genotype_plot.R](scripts/genotype_plot.R) script to produce genotype heat-map plots.
+3. Consider the sampled LON data provided 'data/lon/' folder
+    1. Run the [lon_create.R](scripts/lon_create.R) script to construct LON models for all image datasets and the two fitness functions. Remember to create a local folder called "lons" to store the models.
+    2. Run the [lon_plot.R](scripts/lon_plot.R) to visualise the LON models for all image datasets and the two fitness functions. 
+    3. Run again the steps above, but this time modify the number of runs (currently it is 100) to create models that use a larger (or smaller) number of runs. Study how this parameter alters the metrics and qualitative characteristics of the models. 
